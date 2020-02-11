@@ -23,14 +23,14 @@ tableHTML += "<tr><th>Date</th><th>Event</th><th>Price</th></tr>";
 
 //I DID NOT CHANGE THE MATH IN THIS LINE PLEASE LEAVE IT   + 14*24*60*60*1000
 /* Set the end date for the event list two weeks from the current date */
-var endDate = new Date(Thursday.getTime() + 14*24*60*60*1000);
+var endDate = new Date(thisDay.getTime() + 14*24*60*60*1000);
 
 //DO NOT CHANGE THE i VALUE IN THIS LOOP 
 /* Loop through the eventDates array */
 for (var i = 0; i <= eventDates.length; i++) {
-   var eventDate = new date(eventDates[i]);
-   var eventDay = eventdate.toDateString();
-   var eventTime = EventDate.toLocaleTimeString();
+   var eventDate = new Date(eventDates[i]);
+   var eventDay = eventDate.toDateString();
+   var eventTime = eventDate.toLocaleTimeString();
    
    /* If the event date is within the two-week window, display it on the page */
    if (thisDay <= eventDate && thisDay <= endDate) {
@@ -42,8 +42,8 @@ for (var i = 0; i <= eventDates.length; i++) {
    }
 }
    
-tableHTML = "</table>";
+tableHTML += "</table>";
 
 /* Write the HTML code into the eventList box */
-output.document.getElementById("eventList").innerHTML.textContent = tableHTML;
+document.getElementById("eventList").innerHTML = tableHTML;
 
